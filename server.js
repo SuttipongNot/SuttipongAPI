@@ -45,7 +45,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Endpoint to add computer with image upload
-app.post('/product_computer', upload.single('computer_Image'), (req, res) => {
+app.post('/add_product_computer', upload.single('computer_Image'), (req, res) => {
     const { computer_Namebrand, computer_Model, computer_Serialnumber, computer_Quantity, computer_Price,
         computer_CPUspeed, computer_Memory, computer_Harddisk } = req.body;
     const computer_Image = req.file ? `/uploads/${req.file.filename}` : null;
